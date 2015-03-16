@@ -2,5 +2,11 @@
 (function moduleExport(module) {
   'use strict';
 
-  module.exports = 'Hello world!';
+  module.exports = {
+    'dataTypes': {
+      'string': 1,
+      'number': 0,
+      'password': 3
+    }
+  };
 }(module));
