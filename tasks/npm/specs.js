@@ -1,29 +1,30 @@
-/*global require module*/
-(function specs(require, module) {
+/*global require __dirname*/
+(function specs(require, __dirname) {
   'use strict';
 
   var path = require('path')
-    , walk = require('./walk');
+    , glob = require('glob');
 
-  walk('spec', [], function(err, results) {
+  glob('spec/**/*.js', function onGlob(err, files) {
+
     if (err) {
 
       throw err;
     }
-    if (results &&
-      results.length > 0) {
+    if (files &&
+      files.length > 0) {
 
-      var resultsIndex = 0
-        , resultsLength = results.length
+      var filesIndex = 0
+        , filesLength = files.length
         , aResult
-      for (; resultsIndex < resultsLength; resultsIndex += 1) {
+        , specFile
+        , name;
+      for (; filesIndex < filesLength; filesIndex += 1) {
 
-        aResult = results[resultsIndex];
+        aResult = files[filesIndex];
         if (aResult) {
 
-          var specFile = path.resolve(__dirname, '../..', aResult)
-            , name;
-
+          specFile = path.resolve(__dirname, '../..', aResult);
           require(specFile);
           name = require.resolve(specFile);
           delete require.cache[name];
@@ -31,4 +32,4 @@
       }
     }
   });
-}(require, module));
+}(require, __dirname));

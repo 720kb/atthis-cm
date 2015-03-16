@@ -124,7 +124,6 @@
     "wrap-regex": 2,
 
     "no-extra-boolean-cast": 1,
-    "no-console": 1,
     "no-alert": 1,
     "no-empty-class": 1,
     "no-ex-assign": 1,
@@ -145,8 +144,9 @@
     "no-extra-parens": 1,
     "func-names": 1,
 
-    "no-ternary": 0,
+    "no-ternary": 1,
+    "no-bitwise": 1,
     "sort-vars": 0,
-    "no-bitwise": 0
+    "no-console": 0
   }
 }
