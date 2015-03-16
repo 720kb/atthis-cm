@@ -43,23 +43,6 @@
       report = cli.executeOnFiles(toLint);
       if (report) {
 
-        if (report.errorCount > 0) {
-
-          console.log(colors.red.underline('%s errors!'), report.errorCount);
-          throw 'Blocked due errors.';
-        } else {
-
-          console.log(colors.rainbow('No errors!'));
-        }
-
-        if (report.warningCount > 0) {
-
-          console.log(colors.yellow.underline('%s warnings!'), report.warningCount);
-        } else {
-
-          console.log(colors.rainbow('No warnings!'));
-        }
-
         if (report.results &&
           Array.isArray(report.results)) {
 
@@ -90,6 +73,23 @@
               }
             }
           }
+        }
+
+        if (report.errorCount > 0) {
+
+          console.log(colors.red.underline('%s errors!'), report.errorCount);
+          throw 'Blocked due errors.';
+        } else {
+
+          console.log(colors.rainbow('No errors!'));
+        }
+
+        if (report.warningCount > 0) {
+
+          console.log(colors.yellow.underline('%s warnings!'), report.warningCount);
+        } else {
+
+          console.log(colors.rainbow('No warnings!'));
         }
       }
     }
