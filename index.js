@@ -4,21 +4,14 @@
 
   module.exports = {
     'dataTypes': {
-      'string': {
-        'required': true
-      },
-      'number': {
-        'required': true
-      },
-      'password': {
-        'required': true
-      },
-      'file': {
-        'required': true
-      },
-      'checkbox': {
-        'required': true
-      }
+      'string': 'string',
+      'number': 'number',
+      'password': 'password',
+      'file': 'file',
+      'checkbox': 'checkbox'
+    },
+    'optionsTypes': {
+      'required': 'required'
     }
   };
 }(module));
