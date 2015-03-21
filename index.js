@@ -4,9 +4,21 @@
 
   module.exports = {
     'dataTypes': {
-      'string': 1,
-      'number': 0,
-      'password': 3
+      'string': {
+        'required': true
+      },
+      'number': {
+        'required': true
+      },
+      'password': {
+        'required': true
+      },
+      'file': {
+        'required': true
+      },
+      'checkbox': {
+        'required': true
+      }
     }
   };
 }(module));
