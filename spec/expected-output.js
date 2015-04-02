@@ -11,9 +11,14 @@
       tape.equal(typeof atthisCm, 'object');
       tape.deepEqual(atthisCm, {
         'dataTypes': {
-          'string': 1,
-          'number': 0,
-          'password': 3
+          'string': 'string',
+          'number': 'number',
+          'password': 'password',
+          'file': 'file',
+          'checkbox': 'checkbox'
+        },
+        'optionsTypes': {
+          'required': 'required'
         }
       });
   });
